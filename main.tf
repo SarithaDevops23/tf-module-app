@@ -3,6 +3,6 @@ resource "null_resource" "test"{
 		xyz=timestamp()
 	}
 	provisioner "local-exec"{
-		command = "Hello world - env - ${var.env}"
+		command = "echo Hello world - env - ${var.env}"
 	}
 }
