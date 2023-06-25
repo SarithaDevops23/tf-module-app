@@ -57,7 +57,7 @@ resource "aws_iam_policy_attachment" "policy-attach" {
 
 #iam instance profile
 resource "aws_iam_instance_profile" "iam_instance_profile" {
-  name = "iam_instance_profile"
+  name =  "${var.component}.${var.env}.instanceprofile"
   role = aws_iam_role.role.name
 }
 
