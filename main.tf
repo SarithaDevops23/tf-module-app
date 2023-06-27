@@ -127,6 +127,7 @@ resource "aws_instance" "instance" {
    }
     inline = [
       "sudo labauto ansible",
+      "sudo set-hostname -skip-apply ${var.component}",
       "ansible-pull -i localhost, -U  https://github.com/SarithaDevops23/roboshop-ansible  roboshop.yml -e env=${var.env} -e role_name=${var.component}"
     ]
   }
